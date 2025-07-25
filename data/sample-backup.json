@@ -1,0 +1,58 @@
+{
+  "brokers": [
+    { "code": "RIG", "name": "Rig Valores" },
+    { "code": "IOL", "name": "Invertir OnLine" },
+    { "code": "VETA", "name": "Veta Capital" },
+    { "code": "PPI", "name": "Portfolio Personal Inversiones" },
+    { "code": "BLZ", "name": "Balanz Capital" },
+    { "code": "HSBC", "name": "HSBC" },
+    { "code": "MP", "name": "MercadoPago" }
+  ],
+  "productTypes": [
+    { "code": "ACC", "name": "ACCION" },
+    { "code": "BON", "name": "BONO_NACIONAL" },
+    { "code": "BOP", "name": "BONO_PROVINCIAL" },
+    { "code": "CED", "name": "CEDEAR" },
+    { "code": "CP", "name": "CUOTAPARTE" },
+    { "code": "ETF", "name": "ETF" },
+    { "code": "LEB", "name": "LEBAC" },
+    { "code": "LET", "name": "LETE" },
+    { "code": "LTR", "name": "LETRA" },
+    { "code": "MON", "name": "MONEDA" },
+    { "code": "ON", "name": "OBLIGACION_NEGOCIABLE" },
+    { "code": "OTR", "name": "OTRO" }
+  ],
+  "products": [
+    { "code": "ARS", "description": "Peso", "type": "MON" },
+    { "code": "USD", "description": "Dólar", "type": "MON" },
+    { "code": "USD-D", "description": "Dólar divisa", "type": "MON" }
+  ],
+  "portfolios": [
+    {
+      "id": "1",
+      "brokerCode": "IOL",
+      "products": [
+        { "productCode": "ARS", "amount": 50000 },
+        { "productCode": "USD", "amount": 1000 }
+      ]
+    },
+    {
+      "id": "2",
+      "brokerCode": "PPI",
+      "products": [
+        { "productCode": "USD-D", "amount": 2500 },
+        { "productCode": "ARS", "amount": 100000 }
+      ]
+    },
+    {
+      "id": "3",
+      "brokerCode": "RIG",
+      "products": [
+        { "productCode": "USD", "amount": 500 },
+        { "productCode": "ARS", "amount": 25000 }
+      ]
+    }
+  ],
+  "exportDate": "2025-07-25T12:00:00.000Z",
+  "version": "1.0"
+}
