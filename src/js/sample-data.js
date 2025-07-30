@@ -2,26 +2,18 @@
 export class SampleData {
     static getBrokers() {
         return [
-            { code: 'RIG', name: 'Rig Valores' },
-            { code: 'IOL', name: 'Invertir OnLine' },
-            { code: 'VETA', name: 'Veta Capital' },
-            { code: 'PPI', name: 'Portfolio Personal Inversiones' },
-            { code: 'BLZ', name: 'Balanz Capital' },
-            { code: 'HSBC', name: 'HSBC' },
-            { code: 'MP', name: 'MercadoPago' }
+            { code: 'IBK', name: 'Interactive Brokers' },
+            { code: 'ETR', name: 'eToro' },
+            { code: 'HPI', name: 'Hapi' }
         ];
     }
 
     static getProductTypes() {
         return [
             { code: 'ACC', name: 'ACCION' },
-            { code: 'BON', name: 'BONO_NACIONAL' },
-            { code: 'BOP', name: 'BONO_PROVINCIAL' },
+            { code: 'BON', name: 'BONO' },
             { code: 'CED', name: 'CEDEAR' },
-            { code: 'CP', name: 'CUOTAPARTE' },
             { code: 'ETF', name: 'ETF' },
-            { code: 'LEB', name: 'LEBAC' },
-            { code: 'LET', name: 'LETE' },
             { code: 'LTR', name: 'LETRA' },
             { code: 'MON', name: 'MONEDA' },
             { code: 'ON', name: 'OBLIGACION_NEGOCIABLE' },
@@ -31,9 +23,12 @@ export class SampleData {
 
     static getProducts() {
         return [
-            { code: 'ARS', description: 'Peso', type: 'MON' },
-            { code: 'USD', description: 'Dólar', type: 'MON' },
-            { code: 'USD-D', description: 'Dólar divisa', type: 'MON' }
+            { code: 'USD', description: 'Dólar', typeCode: 'MON' },
+            { code: 'APPL', description: 'Apple Inc.', typeCode: 'ACC' },
+            { code: 'TSL', description: 'Tesla', typeCode: 'ACC' },
+            { code: 'MSFT', description: 'Microsoft Corporation', typeCode: 'ACC' },
+            { code: 'GOOGL', description: 'Alphabet Inc.', typeCode: 'ACC' },
+            { code: 'AMZN', description: 'Amazon.com Inc.', typeCode: 'ACC' }
         ];
     }
 
@@ -41,26 +36,20 @@ export class SampleData {
         return [
             {
                 id: '1',
-                brokerCode: 'IOL',
+                brokerCode: 'IBK',
                 products: [
-                    { productCode: 'ARS', amount: 50000 },
-                    { productCode: 'USD', amount: 1000 }
+                    { productCode: 'USD', amount: 1200 },
+                    { productCode: 'APPL', amount: 5000 },
+                    { productCode: 'AMZN', amount: 3500 }
                 ]
             },
             {
                 id: '2',
-                brokerCode: 'PPI',
+                brokerCode: 'ETR',
                 products: [
-                    { productCode: 'USD-D', amount: 2500 },
-                    { productCode: 'ARS', amount: 100000 }
-                ]
-            },
-            {
-                id: '3',
-                brokerCode: 'RIG',
-                products: [
-                    { productCode: 'USD', amount: 500 },
-                    { productCode: 'ARS', amount: 25000 }
+                    { productCode: 'USD', amount: 10000 },
+                    { productCode: 'TSL', amount: 2000 },
+                    { productCode: 'MSFT', amount: 3000 }
                 ]
             }
         ];

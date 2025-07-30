@@ -59,7 +59,6 @@ export class ProductManager {
             }
             return product[column === 'description' ? 'description' : 'code'];
         });
-
         tableBody.innerHTML = sortedProducts.map(product => `
             <tr>
                 <td><strong>${UIUtils.escapeHtml(product.code)}</strong></td>

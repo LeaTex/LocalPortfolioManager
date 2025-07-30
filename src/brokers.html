@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LocalPortfolioManager - Product Types</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <title>LocalPortfolioManager - Brokers</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -28,7 +28,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="brokers.html">
+                        <a class="nav-link active" href="brokers.html">
                             <i class="bi bi-building"></i> Brokers
                         </a>
                     </li>
@@ -38,7 +38,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="product-types.html">
+                        <a class="nav-link" href="product-types.html">
                             <i class="bi bi-tags"></i> Product Types
                         </a>
                     </li>
@@ -53,14 +53,14 @@
     </nav>
 
     <div class="container mt-4">
-        <!-- Product Types Section -->
-        <div id="product-types" class="section active">
+        <!-- Brokers Section -->
+        <div id="brokers" class="section active">
             <div class="row">
                 <div class="col-12">
                     <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h1>Product Types Management</h1>
-                        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#productTypeModal" onclick="openProductTypeModal()">
-                            <i class="bi bi-plus"></i> Add Product Type
+                        <h1>Brokers Management</h1>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#brokerModal" onclick="openBrokerModal()">
+                            <i class="bi bi-plus"></i> Add Broker
                         </button>
                     </div>
                 </div>
@@ -72,19 +72,19 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-striped">
-                                    <thead class="table-dark" id="product-types-table-header">
+                                    <thead class="table-dark" id="brokers-table-header">
                                         <tr>
-                                            <th class="sortable-header" data-column="code" onclick="sortProductTypesByColumn('code')">
+                                            <th class="sortable-header" data-column="code" onclick="sortBrokersByColumn('code')">
                                                 Code <i class="sort-icon bi bi-arrow-up"></i>
                                             </th>
-                                            <th class="sortable-header" data-column="name" onclick="sortProductTypesByColumn('name')">
+                                            <th class="sortable-header" data-column="name" onclick="sortBrokersByColumn('name')">
                                                 Name <i class="sort-icon bi bi-arrow-down-up"></i>
                                             </th>
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="product-types-table">
-                                        <!-- Product Types will be loaded here -->
+                                    <tbody id="brokers-table">
+                                        <!-- Brokers will be loaded here -->
                                     </tbody>
                                 </table>
                             </div>
@@ -95,29 +95,29 @@
         </div>
     </div>
 
-    <!-- Product Type Modal -->
-    <div class="modal fade" id="productTypeModal" tabindex="-1">
+    <!-- Broker Modal -->
+    <div class="modal fade" id="brokerModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="productTypeModalTitle">Add Product Type</h5>
+                    <h5 class="modal-title" id="brokerModalTitle">Add Broker</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="productTypeForm">
+                    <form id="brokerForm">
                         <div class="mb-3">
-                            <label for="productTypeCode" class="form-label">Code</label>
-                            <input type="text" class="form-control" id="productTypeCode" required>
+                            <label for="brokerCode" class="form-label">Code</label>
+                            <input type="text" class="form-control" id="brokerCode" required>
                         </div>
                         <div class="mb-3">
-                            <label for="productTypeName" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="productTypeName" required>
+                            <label for="brokerName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="brokerName" required>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-warning" onclick="saveProductType()">Save</button>
+                    <button type="button" class="btn btn-primary" onclick="saveBroker()">Save</button>
                 </div>
             </div>
         </div>

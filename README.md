@@ -6,6 +6,8 @@ A simple web application for managing brokers, products, and product types in a 
 
 ### Dashboard
 
+![LPM dashboard](assets/lpm_dashboard.png)
+
 - Overview of total brokers, products, and product types
 - Quick navigation to management sections
 - Real-time count updates
@@ -36,6 +38,8 @@ A simple web application for managing brokers, products, and product types in a 
 
 ### Portfolio Management (CRUD)
 
+![Portfolio Management](assets/lpm_portfoliomanagement.png)
+
 - **Create**: Add new portfolios assigned to brokers
 - **Read**: View all portfolios with product counts
 - **Update**: Edit portfolio details and manage products
@@ -56,19 +60,19 @@ A simple web application for managing brokers, products, and product types in a 
 
 ### Broker
 
-- `code`: Unique identifier for the broker (e.g., "IOL", "RIG")
-- `name`: Display name of the broker (e.g., "Invertir OnLine")
+- `code`: Unique identifier for the broker (e.g., "IBK", "TOR")
+- `name`: Display name of the broker (e.g., "Interactive Brokers")
 
 ### Product Type
 
-- `code`: Unique identifier for the product type (e.g., "MON", "ACC")
-- `name`: Display name of the product type (e.g., "MONEDA", "ACCION")
+- `code`: Unique identifier for the product type (e.g., "CUR", "ACC")
+- `name`: Display name of the product type (e.g., "CURRENCY", "ACCION")
 
 ### Product
 
 - `code`: Unique identifier for the product (e.g., "USD", "AAPL")
 - `description`: Description of the product (e.g., "Dólar", "Apple Inc.")
-- `type`: Reference to product type code
+- `typeCode`: Reference to product type code
 
 ### Portfolio
 
@@ -113,30 +117,37 @@ The application now uses ES6 modules for better organization and maintainability
 ## File Structure
 
 ```text
-portafolio/
-├── dashboard.html          # Main dashboard page
-├── brokers.html           # Brokers management page
-├── products.html          # Products management page
-├── product-types.html     # Product types management page
-├── portfolios.html        # Portfolios management page
-├── portfolio-details.html # Individual portfolio details page
-├── index.html             # Redirects to dashboard
-├── styles.css             # Custom styles and floating alerts
-├── favicon.png            # Application favicon
-├── debug.html             # Debug page for development
-├── data/                  # Sample data files
-│   └── sample-backup.json # Sample backup file for testing import functionality
-├── js/                    # Modular JavaScript files
-│   ├── app.js             # Main application module
-│   ├── storage.js         # localStorage management
-│   ├── ui-utils.js        # UI utilities and alerts
-│   ├── sort-utils.js      # Sorting functionality
-│   ├── broker-manager.js  # Broker CRUD operations
-│   ├── product-manager.js # Product CRUD operations
-│   ├── product-type-manager.js # Product type CRUD operations
-│   ├── portfolio-manager.js # Portfolio CRUD operations
-│   └── sample-data.js     # Sample data for demonstration
-└── README.md              # This file
+LocalPortfolioManager/
+├── src/                    # Main application source files
+│   ├── dashboard.html      # Main dashboard page
+│   ├── brokers.html        # Brokers management page
+│   ├── products.html       # Products management page
+│   ├── product-types.html  # Product types management page
+│   ├── portfolios.html     # Portfolios management page
+│   ├── portfolio-details.html # Individual portfolio details page
+│   ├── index.html          # Redirects to dashboard
+│   ├── styles.css          # Custom styles and floating alerts
+│   ├── debug.html          # Debug page for development
+│   ├── assets/             # Application assets
+│   │   └── favicon.png     # Application favicon
+│   ├── data/               # Sample data files
+│   │   └── sample-backup.json # Sample backup file for testing import functionality
+│   └── js/                 # Modular JavaScript files
+│       ├── app.js          # Main application module
+│       ├── storage.js      # localStorage management
+│       ├── ui-utils.js     # UI utilities and alerts
+│       ├── sort-utils.js   # Sorting functionality
+│       ├── broker-manager.js # Broker CRUD operations
+│       ├── product-manager.js # Product CRUD operations
+│       ├── product-type-manager.js # Product type CRUD operations
+│       ├── portfolio-manager.js # Portfolio CRUD operations
+│       └── sample-data.js  # Sample data for demonstration
+├── assets/                 # Documentation assets
+│   ├── favicon.png         # Favicon copy
+│   ├── lpm_dashboard.png   # Dashboard screenshot
+│   └── lpm_portfoliomanagement.png # Portfolio management screenshot
+├── LICENSE                 # MIT License file
+└── README.md               # This file
 ```
 
 ## Page Structure
@@ -160,10 +171,10 @@ Each page includes:
 
 The application includes sample data relevant to the Argentine financial market:
 
-**Brokers**: IOL, RIG, Veta Capital, PPI, Balanz, HSBC, MercadoPago
-**Product Types**: MONEDA, ACCION, BONO_NACIONAL, CEDEAR, ETF, etc.
-**Products**: ARS (Peso), USD (Dólar), USD-D (Dólar divisa)
-**Portfolios**: Sample portfolios with products and amounts
+- **Brokers**: IOL, RIG, Veta Capital, PPI, Balanz, HSBC, MercadoPago
+- **Product Types**: MONEDA, ACCION, BONO_NACIONAL, CEDEAR, ETF, etc.
+- **Products**: ARS (Peso), USD (Dólar), USD-D (Dólar divisa)
+- **Portfolios**: Sample portfolios with products and amounts
 
 ## Features Details
 
@@ -287,3 +298,6 @@ Potential improvements for future versions:
 ## License
 
 This project is open source and available under the MIT License.
+
+___
+Project (including this file) created with GitHub Copilot Agent (following human instructions).

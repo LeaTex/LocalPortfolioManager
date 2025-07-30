@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LocalPortfolioManager - Portfolio Details</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <title>LocalPortfolioManager - Product Types</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -38,7 +38,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="product-types.html">
+                        <a class="nav-link active" href="product-types.html">
                             <i class="bi bi-tags"></i> Product Types
                         </a>
                     </li>
@@ -53,28 +53,15 @@
     </nav>
 
     <div class="container mt-4">
-        <!-- Portfolio Details Section -->
-        <div id="portfolio-details" class="section active">
+        <!-- Product Types Section -->
+        <div id="product-types" class="section active">
             <div class="row">
                 <div class="col-12">
                     <div class="d-flex justify-content-between align-items-center mb-4">
-                        <div>
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="portfolios.html">Portfolios</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page" id="portfolio-breadcrumb">Portfolio Details</li>
-                                </ol>
-                            </nav>
-                            <h1 id="portfolio-title">Portfolio Details</h1>
-                        </div>
-                        <div>
-                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#portfolioProductModal" onclick="openPortfolioProductModal()">
-                                <i class="bi bi-plus"></i> Add Product
-                            </button>
-                            <a href="portfolios.html" class="btn btn-outline-secondary">
-                                <i class="bi bi-arrow-left"></i> Back to Portfolios
-                            </a>
-                        </div>
+                        <h1>Product Types Management</h1>
+                        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#productTypeModal" onclick="openProductTypeModal()">
+                            <i class="bi bi-plus"></i> Add Product Type
+                        </button>
                     </div>
                 </div>
             </div>
@@ -85,25 +72,19 @@
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-striped">
-                                    <thead class="table-dark" id="portfolio-products-table-header">
+                                    <thead class="table-dark" id="product-types-table-header">
                                         <tr>
-                                            <th class="sortable-header" data-column="type" onclick="sortPortfolioProductsByColumn('type')">
-                                                Type <i class="sort-icon bi bi-arrow-down-up"></i>
+                                            <th class="sortable-header" data-column="code" onclick="sortProductTypesByColumn('code')">
+                                                Code <i class="sort-icon bi bi-arrow-up"></i>
                                             </th>
-                                            <th class="sortable-header" data-column="code" onclick="sortPortfolioProductsByColumn('code')">
-                                                Code <i class="sort-icon bi bi-arrow-down-up"></i>
+                                            <th class="sortable-header" data-column="name" onclick="sortProductTypesByColumn('name')">
+                                                Name <i class="sort-icon bi bi-arrow-down-up"></i>
                                             </th>
-                                            <th class="sortable-header" data-column="description" onclick="sortPortfolioProductsByColumn('description')">
-                                                Description <i class="sort-icon bi bi-arrow-down-up"></i>
-                                            </th>
-                                            <th class="text-end sortable-header" data-column="amount" onclick="sortPortfolioProductsByColumn('amount')">
-                                                Amount <i class="sort-icon bi bi-arrow-down-up"></i>
-                                            </th>
-                                            <th class="text-center">Actions</th>
+                                            <th>Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="portfolio-products-table">
-                                        <!-- Portfolio products will be loaded here -->
+                                    <tbody id="product-types-table">
+                                        <!-- Product Types will be loaded here -->
                                     </tbody>
                                 </table>
                             </div>
@@ -114,31 +95,29 @@
         </div>
     </div>
 
-    <!-- Portfolio Product Modal -->
-    <div class="modal fade" id="portfolioProductModal" tabindex="-1">
+    <!-- Product Type Modal -->
+    <div class="modal fade" id="productTypeModal" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="portfolioProductModalTitle">Add Product to Portfolio</h5>
+                    <h5 class="modal-title" id="productTypeModalTitle">Add Product Type</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="portfolioProductForm">
+                    <form id="productTypeForm">
                         <div class="mb-3">
-                            <label for="portfolioProductSelect" class="form-label">Product</label>
-                            <select class="form-control" id="portfolioProductSelect" required>
-                                <option value="">Select a product</option>
-                            </select>
+                            <label for="productTypeCode" class="form-label">Code</label>
+                            <input type="text" class="form-control" id="productTypeCode" required>
                         </div>
                         <div class="mb-3">
-                            <label for="portfolioProductAmount" class="form-label">Amount</label>
-                            <input type="number" class="form-control" id="portfolioProductAmount" step="0.01" min="0.01" required>
+                            <label for="productTypeName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="productTypeName" required>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-success" onclick="savePortfolioProduct()">Save</button>
+                    <button type="button" class="btn btn-warning" onclick="saveProductType()">Save</button>
                 </div>
             </div>
         </div>

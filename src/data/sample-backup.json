@@ -1,0 +1,47 @@
+{
+  "brokers": [
+    { "code": "IBK", "name": "Interactive Brokers" },
+    { "code": "ETR", "name": "eToro" },
+    { "code": "HPI", "name": "Hapi" }
+  ],
+  "productTypes": [
+    { "code": "ACC", "name": "ACCION" },
+    { "code": "BON", "name": "BONO" },
+    { "code": "CED", "name": "CEDEAR" },
+    { "code": "ETF", "name": "ETF" },
+    { "code": "LTR", "name": "LETRA" },
+    { "code": "MON", "name": "MONEDA" },
+    { "code": "ON", "name": "OBLIGACION_NEGOCIABLE" },
+    { "code": "OTR", "name": "OTRO" }
+  ],
+  "products": [
+    { "code": "USD", "description": "Dólar", "typeCode": "MON" },
+    { "code": "APPL", "description": "Apple Inc.", "typeCode": "ACC" },
+    { "code": "TSL", "description": "Tesla", "typeCode": "ACC" },
+    { "code": "MSFT", "description": "Microsoft Corporation", "typeCode": "ACC" },
+    { "code": "GOOGL", "description": "Alphabet Inc.", "typeCode": "ACC" },
+    { "code": "AMZN", "description": "Amazon.com Inc.", "typeCode": "ACC" }
+  ],
+  "portfolios": [
+    {
+      "id": "1",
+      "brokerCode": "IBK",
+      "products": [
+        { "productCode": "USD", "amount": 1200 },
+        { "productCode": "APPL", "amount": 5000 },
+        { "productCode": "AMZN", "amount": 3500 }
+      ]
+    },
+    {
+      "id": "2",
+      "brokerCode": "ETR",
+      "products": [
+        { "productCode": "USD", "amount": 10000 },
+        { "productCode": "TSL", "amount": 2000 },
+        { "productCode": "MSFT", "amount": 3000 }
+      ]
+    }
+  ],
+  "exportDate": "2025-07-25T12:00:00.000Z",
+  "version": "1.0"
+}
